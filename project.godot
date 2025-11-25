@@ -14,20 +14,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/actor/Actor.gd"
 }, {
-"base": "Reference",
-"class": "BlockEditorContext",
-"language": "GDScript",
-"path": "res://addons/block_code/ui/block_editor_context.gd"
-}, {
 "base": "Actor",
 "class": "Box",
 "language": "GDScript",
 "path": "res://src/actor/Box.gd"
-}, {
-"base": "Reference",
-"class": "CategoryFactory",
-"language": "GDScript",
-"path": "res://addons/block_code/ui/picker/categories/category_factory.gd"
 }, {
 "base": "Reference",
 "class": "EaseMover",
@@ -76,9 +66,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Actor": "",
-"BlockEditorContext": "",
 "Box": "",
-"CategoryFactory": "",
 "EaseMover": "",
 "Exit": "",
 "Key": "",

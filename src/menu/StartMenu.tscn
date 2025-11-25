@@ -311,9 +311,10 @@ extra_spacing_bottom = -4
 font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=30]
-size = 9
+size = 10
 extra_spacing_top = -2
 extra_spacing_bottom = -4
+extra_spacing_space = 1
 font_data = ExtResource( 27 )
 
 [sub_resource type="DynamicFont" id=23]
@@ -1164,13 +1165,15 @@ align = 1
 valign = 1
 
 [node name="harmony" type="Label" parent="Credits/Top"]
-margin_left = -15.0
-margin_top = 18.0
-margin_right = 88.0
-margin_bottom = 48.0
+margin_left = -23.0
+margin_top = 19.0
+margin_right = 80.0
+margin_bottom = 56.0
 custom_fonts/font = SubResource( 30 )
-text = "Kathleen, Aastha, 
-Varsha, and Leah
+text = "Kathleen
+Aastha
+Varsha
+Leah
 "
 align = 1
 
@@ -1180,7 +1183,8 @@ margin_top = 43.0
 margin_right = 79.0
 margin_bottom = 60.0
 custom_fonts/font = SubResource( 5 )
-text = "harmonymonroe.com"
+text = "
+"
 align = 1
 
 [node name="List" type="Label" parent="Credits"]
