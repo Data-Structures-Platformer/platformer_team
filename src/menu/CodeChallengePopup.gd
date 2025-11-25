@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+signal answered(correct)
+
 export(Array) var answers = []
 export(int) var correct_index = -1
 
@@ -61,3 +63,4 @@ func _on_submit_pressed():
 		get_tree().paused = false
 	else:
 		question_label.text = "Incorrect. Try again!"
+		emit_signal("answered", false)

@@ -108,7 +108,8 @@ func _physics_process(delta):
 	# hit exit
 	for a in check_area_actors("exit"):
 		print(name + " hit exit")
-		win()
+
+		show_quiz_before_win()
 		return
 	
 	# hit spike
@@ -277,6 +278,31 @@ func win():
 	# win scene
 	Shared.win()
 	remove_player()
+
+func show_quiz_before_win():
+	var popup = preload("res://src/menu/CodeChallengePopup.tscn").instance()
+	get_tree().root.add_child(popup)
+
+	popup.show_question(
+		"What does PUSH do to a stack?",
+		["Adds to the top", "Adds to the bottom", "Removes item"],
+		0
+	)
+
+	# pause gameplay
+	get_tree().paused = true
+
+	# Wait for popup to emit a signal when answered
+	popup.connect("answered", self, "_on_quiz_answered")
+	
+func _on_quiz_answered(correct):
+	# resume gameplay
+	get_tree().paused = false
+
+	if correct:
+		win()
+	else:
+		print("Incorrect — you can decide what happens here.")
 
 func try_anim(arg : String):
 	if node_anim.current_animation != arg:
