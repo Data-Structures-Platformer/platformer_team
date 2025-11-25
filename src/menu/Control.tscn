@@ -1,0 +1,15 @@
+[gd_scene format=2]
+
+[node name="Control" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Label" type="Label" parent="Panel"]
+anchor_right = 37.15
+anchor_bottom = 39.872
+margin_right = -6.10352e-05
+margin_bottom = -70.8801

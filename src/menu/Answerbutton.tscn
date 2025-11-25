@@ -1,0 +1,7 @@
+[gd_scene format=2]
+
+[node name="Answerbutton" type="Button"]
+margin_left = 46.0
+margin_top = 60.0
+margin_right = 155.0
+margin_bottom = 91.0
