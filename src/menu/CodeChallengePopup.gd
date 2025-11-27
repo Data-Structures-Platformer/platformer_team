@@ -13,6 +13,7 @@ var selected_index = -1
 
 func _ready():
 	# hide()
+	pause_mode = Node.PAUSE_MODE_PROCESS
 	submit_button.connect("pressed", self, "_on_submit_pressed")
 	show_question(
 	"Test Question?",
@@ -41,7 +42,6 @@ func show_question(question_text, answer_list, correct):
 		answers_container.add_child(btn)
 
 	show()
-	get_tree().paused = true
 
 func _on_answer_pressed(index, btn):
 	selected_index = index
