@@ -80,7 +80,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Tiny Crate"
+config/name="Data Dungeon"
 config/description="Tiny Crate by Harmony Honey Monroe
 harmonymonroe.com"
 run/main_scene="res://src/menu/splash.tscn"

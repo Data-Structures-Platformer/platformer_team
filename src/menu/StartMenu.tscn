@@ -1053,11 +1053,12 @@ uppercase = true
 
 [node name="Header" type="Label" parent="Control"]
 margin_top = 5.0
-margin_right = 228.0
+margin_right = 276.0
 margin_bottom = 26.0
 rect_min_size = Vector2( 228, 0 )
+rect_scale = Vector2( 0.5, 0.5 )
 custom_fonts/font = SubResource( 20 )
-text = "Tiny Crate"
+text = "Data Dungeon"
 align = 1
 
 [node name="Logo" type="TextureRect" parent="Control"]
@@ -1147,33 +1148,35 @@ rect_pivot_offset = Vector2( -202, 36 )
 
 [node name="tinycrate" type="Label" parent="Credits/Top"]
 margin_left = -14.0
-margin_top = 3.0
+margin_top = -3.0
 margin_right = 55.0
-margin_bottom = 10.0
+margin_bottom = 4.0
+rect_scale = Vector2( 0.8, 0.8 )
 custom_fonts/font = SubResource( 21 )
-text = "Tiny Crate"
+text = "Data Dungeon"
 align = 1
 
 [node name="By" type="Label" parent="Credits/Top"]
-margin_left = -22.0
-margin_top = 15.0
-margin_right = -12.0
-margin_bottom = 25.0
+margin_left = -16.0
+margin_top = 9.0
+margin_right = 61.0
+margin_bottom = 61.0
 custom_fonts/font = ExtResource( 25 )
-text = "by"
+text = "by
+Kathleen
+Aastha
+Varsha
+Leah"
 align = 1
 valign = 1
 
 [node name="harmony" type="Label" parent="Credits/Top"]
-margin_left = -23.0
-margin_top = 19.0
-margin_right = 80.0
-margin_bottom = 56.0
+margin_left = -14.0
+margin_top = 32.0
+margin_right = 37.0
+margin_bottom = 93.0
 custom_fonts/font = SubResource( 30 )
-text = "Kathleen
-Aastha
-Varsha
-Leah
+text = "
 "
 align = 1
 
