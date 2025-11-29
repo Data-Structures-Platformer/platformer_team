@@ -279,16 +279,27 @@ func win():
 	Shared.win()
 	remove_player()
 
+# Replace ONLY these two functions in your Player.gd file
+
 func show_quiz_before_win():
+	# Load the questions database
+	var QuizDB = load("res://src/menu/QuizQuestions.gd")
+	var quiz_data = QuizDB.new()
+	
+	# Pick a random question from the list
+	randomize()
+	var random_index = randi() % quiz_data.questions.size()
+	var question_data = quiz_data.questions[random_index]
+	
 	var popup = preload("res://src/menu/CodeChallengePopup.tscn").instance()
 	get_tree().root.add_child(popup)
 
 	popup.show_question(
-		"What does PUSH do to a stack?",
-		["Adds to the top", "Adds to the bottom", "Removes item"],
-		0
+		question_data[0],  # question text
+		question_data[1],  # answers array
+		question_data[2]   # correct answer index
 	)
-
+	
 	# pause gameplay
 	get_tree().paused = true
 
@@ -302,7 +313,8 @@ func _on_quiz_answered(correct):
 	if correct:
 		win()
 	else:
-		print("Incorrect — you can decide what happens here.")
+		print("Incorrect answer - player dies")
+		death()
 
 func try_anim(arg : String):
 	if node_anim.current_animation != arg:

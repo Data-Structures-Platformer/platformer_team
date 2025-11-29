@@ -5,15 +5,56 @@ export var radius := 60.0 setget set_radius
 export var points := 5 setget set_points
 export var angle := 0.0 setget set_angle
 export var deadzone := 3.0 setget set_deadzone
-
 export var poly_path : NodePath = ""
 onready var poly : Polygon2D = get_node_or_null(poly_path)
 export var inner_radius := 50.0 setget set_inner_radius
 export var inner_offset := 5.0 setget set_inner_offset
 
+# Auto-scaling options
+export var auto_scale := true
+export var max_size_percent := 0.05 # Maximum 5% of screen width
+
+var _scaled := false
+
+func _ready():
+	# Only scale when actually running the game, not in editor
+	if auto_scale and not Engine.editor_hint:
+		call_deferred("fit_to_screen")
+	else:
+		act()
+		inner_act()
+
+func fit_to_screen():
+	if _scaled:
+		return
+	_scaled = true
+	
+	var viewport_size = get_viewport_rect().size
+	var min_dimension = min(viewport_size.x, viewport_size.y)
+	
+	# Calculate a reasonable size (much smaller)
+	var new_radius = min_dimension * max_size_percent
+	
+	# Ensure it doesn't exceed original design size
+	new_radius = min(new_radius, 60.0)
+	
+	radius = new_radius
+	
+	# Scale inner radius proportionally
+	var ratio = 50.0 / 60.0  # Use original ratio
+	inner_radius = new_radius * ratio
+	inner_offset = 5.0 * (new_radius / 60.0)
+	
+	# Force update the shape
+	act()
+	inner_act()
+	
+	print("Joystick scaled to radius: ", radius)
+
 func set_radius(arg := radius):
 	radius = arg
-	act()
+	if not Engine.editor_hint or _scaled:
+		act()
 
 func set_points(arg := points):
 	points = arg
