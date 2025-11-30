@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/menu/CodeChallengePopup.gd" type="Script" id=1]
-[ext_resource path="res://media/font/DungeonFont.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://media/font/m6x11.tres" type="DynamicFont" id=2]
 [ext_resource path="res://src/menu/new_theme.tres" type="Theme" id=3]
 [ext_resource path="res://media/audio/music/6-29-2018.mp3" type="AudioStream" id=4]
 [ext_resource path="res://media/font/m3x6.tres" type="DynamicFont" id=5]
@@ -10,11 +10,6 @@
 default_font = ExtResource( 5 )
 
 [sub_resource type="Theme" id=3]
-
-[sub_resource type="DynamicFont" id=1]
-outline_size = 1
-outline_color = Color( 0.113725, 0.00784314, 0.00784314, 1 )
-font_data = ExtResource( 2 )
 
 [node name="CodeChallengePopup" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -39,16 +34,16 @@ custom_constants/separation = 12
 
 [node name="QuestionLabel" type="Label" parent="Panel/VBoxContainer"]
 margin_right = 230.0
-margin_bottom = 17.0
+margin_bottom = 13.0
 theme = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = ExtResource( 2 )
 align = 1
 autowrap = true
 
 [node name="AnswersContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
-margin_top = 29.0
-margin_bottom = 29.0
+margin_top = 25.0
+margin_bottom = 25.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
 custom_constants/separation = 12
