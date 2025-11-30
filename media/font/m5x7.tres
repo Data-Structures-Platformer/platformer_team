@@ -3,6 +3,7 @@
 [ext_resource path="res://media/font/m5x7.ttf" type="DynamicFontData" id=1]
 
 [resource]
+size = 10
 extra_spacing_top = -4
 extra_spacing_bottom = -1
 font_data = ExtResource( 1 )

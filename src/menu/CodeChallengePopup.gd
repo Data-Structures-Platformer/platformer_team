@@ -54,7 +54,7 @@ func show_question(question_text, answer_list, correct):
 	selected_index = 0  # Start with first option selected
 	
 	# Make sure submit button is visible for new question
-	submit_button.visible = true
+	submit_button.visible = false
 	
 	# Build answer buttons
 	for i in range(answers.size()):
