@@ -37,7 +37,7 @@ theme = SubResource( 2 )
 custom_constants/separation = 12
 
 [node name="QuestionLabel" type="Label" parent="Panel/VBoxContainer"]
-margin_right = 174.0
+margin_right = 173.0
 margin_bottom = 34.0
 rect_min_size = Vector2( 0, 20 )
 size_flags_horizontal = 3
@@ -50,16 +50,16 @@ autowrap = true
 
 [node name="AnswersContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
 margin_top = 46.0
-margin_right = 174.0
-margin_bottom = 81.0
+margin_right = 173.0
+margin_bottom = 80.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 12
 
 [node name="SubmitButton" type="Button" parent="Panel/VBoxContainer"]
-margin_top = 93.0
-margin_right = 174.0
-margin_bottom = 107.0
+margin_top = 92.0
+margin_right = 173.0
+margin_bottom = 106.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 text = "Submit"
