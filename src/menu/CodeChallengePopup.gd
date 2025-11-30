@@ -36,7 +36,7 @@ func load_question(question_num):
 	# Define all your questions here based on the number
 	show_question(
 		"Test Question 1?",
-		["Option A", "Option B", "Option C"],
+		["Option A", "Option B", "Option C", "Option D"],
 		1
 	)
 
