@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://media/image/harmony-monroe-white.png" type="Texture" id=1]
 [ext_resource path="res://src/stage/CamBounds.gd" type="Script" id=2]
 [ext_resource path="res://src/menu/splash.gd" type="Script" id=3]
 [ext_resource path="res://media/image/harmony-monroe-square-white.png" type="Texture" id=4]
+[ext_resource path="res://src/menu/new_theme.tres" type="Theme" id=5]
+[ext_resource path="res://media/font/m3x6.tres" type="DynamicFont" id=6]
 
 [node name="Splash" type="Node2D"]
 script = ExtResource( 3 )
@@ -39,9 +41,26 @@ script = ExtResource( 2 )
 modulate = Color( 0, 0, 0, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 228.0
+margin_bottom = -128.0
 texture = ExtResource( 4 )
 expand = true
 stretch_mode = 6
+
+[node name="Label" type="Label" parent="CanvasLayer/Center/Control"]
+anchor_right = 0.138
+margin_top = 1.0
+margin_right = 195.536
+margin_bottom = 127.0
+theme = ExtResource( 5 )
+custom_colors/font_color = Color( 0.0196078, 0.00392157, 0.00392157, 1 )
+custom_fonts/font = ExtResource( 6 )
+text = "CISC 220: Data Structures Final Project 
+
+By the coolest programmers ever:
+Kathleen, Varsha, Aastha, and Leah"
+align = 1
+valign = 1
 
 [node name="ViewportContainer" type="ViewportContainer" parent="."]
 margin_left = -163.0

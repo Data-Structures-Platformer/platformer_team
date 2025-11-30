@@ -72,8 +72,8 @@ func _ready():
 	
 	color_rect.modulate = Color.white
 	logo.modulate = Color.black
-	#Music.play()
-	#Audio.play("menu_bell")
+	Music.play()
+	Audio.play("menu_bell")
 	
 	yield(get_tree().create_timer(1.5), "timeout")
 	
