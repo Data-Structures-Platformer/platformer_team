@@ -3,11 +3,11 @@ Made with Godot 3.6
 
 Precision Puzzle Platformer Game
 
-Made By:
-Kathleen Higgins
-Varsha Danduri
-Aastha Desai
-Leah Rhinehart 
+### Made By:
+- Kathleen Higgins
+- Varsha Danduri
+- Aastha Desai
+- Leah Rhinehart 
 
 ## License
 This is free and unencumbered software! See [UNLICENSE](UNLICENSE) for more information.
