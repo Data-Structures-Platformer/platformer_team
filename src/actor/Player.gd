@@ -333,32 +333,22 @@ func show_quiz_before_win():
 	get_tree().paused = true
 	
 func _on_quiz_answered(correct):
-	# Unpause gameplay
 	get_tree().paused = false
 	quiz_active = false
 
-	# Clean up popup so it never survives scene changes
-	if quiz_popup and is_instance_valid(quiz_popup):
-		quiz_popup.queue_free()
-	quiz_popup = null
-
-	# Update stats for this quiz round
+	# Update counters
 	quiz_questions_answered += 1
 	if correct:
 		quiz_correct_answers += 1
 	else:
-		# Wrong answer at any time → fail immediately
 		_finish_quiz(false)
 		return
 
-	# If we still have more questions to ask, and they haven't missed any yet:
+	# Next question?
 	if quiz_questions_answered < quiz_questions_needed:
-		# Ask the next question immediately
 		show_quiz_before_win()
 	else:
-		# Quiz finished (answered 2 questions)
-		var passed = (quiz_correct_answers == quiz_questions_needed)
-		_finish_quiz(passed)
+		_finish_quiz(quiz_correct_answers == quiz_questions_needed)
 
 func try_anim(arg : String):
 	if node_anim.current_animation != arg:
@@ -391,4 +381,4 @@ func _finish_quiz(passed: bool):
 		win()
 	else:
 		# Any miss → restart level
-		death()
+		get_tree().reload_current_scene()
