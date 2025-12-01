@@ -20,16 +20,6 @@ var questions = [
 		0
 	],
 	[
-		"A Left-Right (LR) imbalance requires:",
-		["A single right rotation", "Left rotation on parent only", "Left rotation on child, then right rotation on parent"],
-		2
-	],
-	[
-		"A Right-Left (RL) imbalance requires:",
-		["Left rotation only", "Right rotation on child, then left rotation on parent", "Left rotation on child, then right rotation on parent"],
-		1
-	],
-	[
 		"After a rotation, what must be updated?",
 		["Only the root pointer", "Only subtree pointers", "Heights of affected nodes"],
 		2
@@ -40,28 +30,8 @@ var questions = [
 		1
 	],
 	[
-		"Why do we use getHeight(nullptr) = -1?",
-		["To make leaf nodes negative", "To force rotations more often", "So leaf nodes naturally compute to height 0"],
-		2
-	],
-	[
-		"When should you compute rotations during insertion?",
-		["Before recursing", "Before inserting the node", "After returning from recursive calls on children"],
-		2
-	],
-	[
 		"What condition triggers an AVL rotation?",
 		["Height difference becomes exactly 0", "Balance factor < −1 or > +1", "Every time a new node is added"],
-		1
-	],
-	[
-		"Here is a tree imbalance. What type is it?\n      30\n      /\n    20\n      \\\n       25",
-		["LL", "LR", "RR"],
-		1
-	],
-	[
-		"What is the correct rotation sequence for that LR case above?",
-		[ "Left rotation", "Left rotation on child, then right rotation on parent", "Right rotation on child, then left rotation on parent"],
 		1
 	],
 	[
@@ -75,11 +45,6 @@ var questions = [
 		1
 	],
 	[
-		"What must happen after deleting a node in an AVL tree?",
-		["Nothing (AVL deletions don't affect balance)", "Heights and balances must be recomputed up the tree", "All nodes must be reinserted"],
-		1
-	],
-	[
 		"A left rotation does what?",
 		["Promotes left child", "Promotes right child", "Swaps only height values"],
 		1
@@ -88,11 +53,6 @@ var questions = [
 		"In a Right-Right imbalance, which side is heavy?",
 		["Left subtree", "Right subtree", "Both sides"],
 		1
-	],
-	[
-		"Which describes a proper LR rotation?",
-		["Right rotate root → Right rotate child", "Left rotate root → Left rotate child", "Left rotate left child → Right rotate root"],
-		2
 	],
 	[
 		"What happens if you forget to update node heights after rotation?",
@@ -143,11 +103,6 @@ var questions = [
 		"What is the average time complexity of searching in a hash map?",
 		["O(1)", "O(log n)", "O(n log n)"],
 		0
-	],
-	[
-		"Deleting a node with two children requires replacing it with:",
-		["A null pointer", "The largest node in the left subtree", "The smallest node in the right subtree, or the largest in the left subtree"],
-		2
 	],
 	[
 		"How many children can a binary tree node have at most?",
