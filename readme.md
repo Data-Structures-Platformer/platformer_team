@@ -1,9 +1,13 @@
-# ![icon](media/image/icon.png) Tiny Crate
+# ![icon](media/image/icon.png) Data Dungeon
 Made with Godot 3.6
 
 Precision Puzzle Platformer Game
 
-Play on itch.io [harmonymonroe.itch.io/tinycrate](https://harmonymonroe.itch.io/tinycrate) ! (:
+Made By:
+Kathleen Higgins
+Varsha Danduri
+Aastha Desai
+Leah Rhinehart 
 
 ## License
 This is free and unencumbered software! See [UNLICENSE](UNLICENSE) for more information.
