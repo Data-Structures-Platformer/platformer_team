@@ -2,6 +2,12 @@ tool
 extends Actor
 class_name Player
 
+var quiz_popup : Node = null
+var quiz_questions_needed := 2
+var quiz_questions_answered := 0
+var quiz_correct_answers := 0
+var quiz_active := false
+
 export var move_speed = 0.75
 var move_slow = 0.75
 var move_accel = 0.12
@@ -282,39 +288,77 @@ func win():
 # Replace ONLY these two functions in your Player.gd file
 
 func show_quiz_before_win():
+	# Don’t start another quiz if one is already open
+	if quiz_active:
+		return
+
+	quiz_active = true
+
+	# If starting a fresh quiz round, reset counters
+	if quiz_questions_answered == 0:
+		quiz_correct_answers = 0
+
 	# Load the questions database
 	var QuizDB = load("res://src/menu/QuizQuestions.gd")
 	var quiz_data = QuizDB.new()
-	
+
 	# Pick a random question from the list
 	randomize()
 	var random_index = randi() % quiz_data.questions.size()
 	var question_data = quiz_data.questions[random_index]
-	
-	var popup = preload("res://src/menu/CodeChallengePopup.tscn").instance()
-	get_tree().root.add_child(popup)
 
-	popup.show_question(
+	# Instance the popup
+	var popup_scene = preload("res://src/menu/CodeChallengePopup.tscn")
+	quiz_popup = popup_scene.instance()
+
+	# Parent it to the UI autoload so scaling matches the HUD
+	var ui = get_node_or_null("/root/UI")
+	if ui:
+		ui.add_child(quiz_popup)
+	else:
+		# Fallback: attach to current scene
+		get_tree().current_scene.add_child(quiz_popup)
+
+	# Show the question
+	quiz_popup.show_question(
 		question_data[0],  # question text
 		question_data[1],  # answers array
 		question_data[2]   # correct answer index
 	)
-	
-	# pause gameplay
-	get_tree().paused = true
 
-	# Wait for popup to emit a signal when answered
-	popup.connect("answered", self, "_on_quiz_answered")
+	# Connect the signal ONCE for this popup
+	quiz_popup.connect("answered", self, "_on_quiz_answered", [], CONNECT_ONESHOT)
+
+	# Pause gameplay, but popup should have pause_mode = PROCESS
+	get_tree().paused = true
 	
 func _on_quiz_answered(correct):
-	# resume gameplay
+	# Unpause gameplay
 	get_tree().paused = false
+	quiz_active = false
 
+	# Clean up popup so it never survives scene changes
+	if quiz_popup and is_instance_valid(quiz_popup):
+		quiz_popup.queue_free()
+	quiz_popup = null
+
+	# Update stats for this quiz round
+	quiz_questions_answered += 1
 	if correct:
-		win()
+		quiz_correct_answers += 1
 	else:
-		print("Incorrect answer - player dies")
-		death()
+		# Wrong answer at any time → fail immediately
+		_finish_quiz(false)
+		return
+
+	# If we still have more questions to ask, and they haven't missed any yet:
+	if quiz_questions_answered < quiz_questions_needed:
+		# Ask the next question immediately
+		show_quiz_before_win()
+	else:
+		# Quiz finished (answered 2 questions)
+		var passed = (quiz_correct_answers == quiz_questions_needed)
+		_finish_quiz(passed)
 
 func try_anim(arg : String):
 	if node_anim.current_animation != arg:
@@ -327,3 +371,24 @@ func anim_frame():
 	
 	if f == clamp(f, 0, node_sprite.vframes - 1):
 		node_sprite.frame_coords.y = f
+		
+func _exit_tree():
+	# Safety cleanup: if quiz popup exists, delete it
+	if quiz_popup and is_instance_valid(quiz_popup):
+		quiz_popup.queue_free()
+	quiz_popup = null
+	get_tree().paused = false
+	quiz_active = false
+	
+func _finish_quiz(passed: bool):
+	# Reset quiz state for next time
+	quiz_questions_answered = 0
+	quiz_correct_answers = 0
+	quiz_active = false
+
+	if passed:
+		# 2/2 correct → go to map select (existing win logic)
+		win()
+	else:
+		# Any miss → restart level
+		death()
