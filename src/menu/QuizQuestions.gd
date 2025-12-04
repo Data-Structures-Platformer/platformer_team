@@ -144,6 +144,125 @@ var questions = [
 		["Slow search times", "Limited size", "Cannot delete"],
 		0
 	]
+		"Linked lists have a min of?",
+		["2 elements", "1 element", "3 elements"],
+		1
+	],
+	[
+		"Insertion sort time analysis?",
+		["Best case O(n)", "Worst case O(n)", "Worst case O(log n)"],
+		0
+	],
+	[
+		"Which is unstable?",
+		["Bubble Sort", "Merge Sort", "Quick Sort"],
+		2
+	],
+	[
+		"If the balance is -2?",
+		["Left child is longer", "Right child is longer", "They are equal"],
+		1
+	],
+	[
+		"When do we apply a right rotation?",
+		["Unbalanced node = -2", "Unbalanced node = 0", "Unbalanced node = 2"],
+		2
+	],
+	[
+		"What do you do at the end of a hash function?",
+		["% arrsize", "Key * arrsize", "Double data"],
+		0
+	],
+	[
+		"What is the best array size?",
+		["10", "11", "12"],
+		1
+	],
+	[
+		"BST goal?",
+		["Eliminate half the data", "Balance all nodes", "Find the biggest number"],
+		0
+	],
+	[
+		"What does Huffman coding do?",
+		["Fixed codes", "Frequency-based codes", "Random codes"],
+		1
+	],
+	[
+		"Preorder is used for?",
+		["Copying", "Alphabetical", "Deleting"],
+		0
+	],
+	[
+		"Inorder is used for?",
+		["Copying", "Alphabetical", "Deleting"],
+		1
+	],
+	[
+		"Postorder is used for?",
+		["Copying", "Alphabetical", "Deleting"],
+		2
+	],
+	[
+		"First step of Preorder?",
+		["Traverse left", "Traverse right", "Visit root"],
+		2
+	],
+	[
+		"Second step of Preorder?",
+		["Traverse left", "Traverse right", "Visit root"],
+		0
+	],
+	[
+		"Third step of Preorder?",
+		["Traverse left", "Traverse right", "Visit root"],
+		1
+	],
+	[
+		"First step of Inorder?",
+		["Traverse left", "Traverse right", "Visit root"],
+		0
+	],
+	[
+		"Second step of Inorder?",
+		["Traverse left", "Traverse right", "Visit root"],
+		1
+	],
+	[
+		"Third step of Inorder?",
+		["Traverse left", "Traverse right", "Visit root"],
+		1
+	],
+	[
+		"First step of Postorder?",
+		["Traverse left", "Traverse right", "Visit root"],
+		0
+	],
+	[
+		"Second step of Postorder?",
+		["Traverse left", "Traverse right", "Visit root"],
+		1
+	],
+	[
+		"Third step of Postorder?",
+		["Traverse left", "Traverse right", "Visit root"],
+		2
+	],
+	[
+		"Which sort picks the smallest element each pass?",
+		["Merge", "Selection", "Quick"],
+		1
+	],
+	[
+		"Linear probing issue?",
+		["Slow sorting", "Clustering", "Lost nodes"],
+		1
+	],
+	[
+		"What is the worst case for Quicksort?",
+		["A sorted list", "A random list", "A mostly sorted list"],
+		0
+	]
 ];
 
 var current_question_index = 0
