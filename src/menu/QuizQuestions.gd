@@ -143,7 +143,8 @@ var questions = [
 		"What is the main disadvantage of a linked list compared to an array?",
 		["Slow search times", "Limited size", "Cannot delete"],
 		0
-	]
+	],
+	[
 		"Linked lists have a min of?",
 		["2 elements", "1 element", "3 elements"],
 		1
