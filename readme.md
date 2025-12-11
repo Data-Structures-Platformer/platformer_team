@@ -7,7 +7,8 @@ Precision Puzzle Platformer Game
 - Kathleen Higgins
 - Varsha Danduri
 - Aastha Desai
-- Leah Rhinehart 
+- Leah Rhinehart
+Base code hosted open-source under the Unlicense and created by HarmonyHoney (base platformer code). 
 
 ## License
 This is free and unencumbered software! See [UNLICENSE](UNLICENSE) for more information.
