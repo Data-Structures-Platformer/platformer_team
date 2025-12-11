@@ -15,7 +15,6 @@ Precision Puzzle Platformer Game
 This is free and unencumbered software! See [UNLICENSE](UNLICENSE) for more information.
 
 ## Screenshots
-![shot1](media/image/screens/1.png)
 ![shot2](media/image/screens/2.png)
 ![shot3](media/image/screens/3.png)
 ![shot4](media/image/screens/4.png)
@@ -24,4 +23,3 @@ This is free and unencumbered software! See [UNLICENSE](UNLICENSE) for more info
 ![shot7](media/image/screens/7.png)
 ![shot8](media/image/screens/8.png)
 ![shot9](media/image/screens/9.png)
-![shot10](media/image/screens/10.png)
