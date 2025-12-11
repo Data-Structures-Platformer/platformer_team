@@ -9,7 +9,7 @@ Precision Puzzle Platformer Game
 - Aastha Desai
 - Leah Rhinehart
   
-***Base code hosted open-source under the Unlicense and created by HarmonyHoney (base platformer code).***
+*Base code hosted open-source under the Unlicense and created by HarmonyHoney (base platformer code).*
 
 ## License
 This is free and unencumbered software! See [UNLICENSE](UNLICENSE) for more information.
